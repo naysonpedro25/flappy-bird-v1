@@ -33,12 +33,17 @@ export function criarJogador() {
   jogador.onMousePress(() => {
     pular();
   });
-  
+
   jogador.onFall(() => {
     jogador.play("parado");
   });
 
   jogador.onUpdate(() => {
+    if (jogador.pos.y < jogador.height) {
+      jogador.pos.y = jogador.height;
+  
+    }
+
     if (jogador.vel.y > 0) {
       jogador.angle += 180 * k.dt();
       if (jogador.angle > 60) {

@@ -14,7 +14,7 @@ export function criarGeradorDeCanos() {
 
     const parDeCanos = k.add([k.pos(525, 0), k.z(0), "parCanos"]);
 
-    const canoTop = parDeCanos.add([
+    const canoDeCima = parDeCanos.add([
       k.sprite("cano", {
         flipY: true,
         width: 80,
@@ -26,7 +26,7 @@ export function criarGeradorDeCanos() {
       "cano",
     ]);
 
-    const canoBottom = parDeCanos.add([
+    const canoDeBaixo = parDeCanos.add([
       k.sprite("cano", {
         width: 80,
       }),
@@ -37,12 +37,12 @@ export function criarGeradorDeCanos() {
       "cano",
     ]);
 
-    const areaPonto = parDeCanos.add([
+    const areaPontuacao = parDeCanos.add([
       k.rect(1, ESPACO_ENTRE_CANOS),
       k.area(),
       k.opacity(0),
       k.anchor("center"),
-      k.pos(canoTop.width, novoCentro),
+      k.pos(canoDeCima.width, novoCentro),
       "pontuar",
     ]);
 
@@ -55,7 +55,8 @@ export function criarGeradorDeCanos() {
     });
   }
 
-  return k.loop(INTERVALO_POR_CANO, () => {
+  const geradorParCanos = k.loop(INTERVALO_POR_CANO, () => {
     porCano();
   });
+  return geradorParCanos;
 }

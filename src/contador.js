@@ -47,5 +47,6 @@ export function contador() {
 
   return {
     adcionarPonto,
+    resetarPontos
   };
 }

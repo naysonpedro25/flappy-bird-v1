@@ -1,5 +1,5 @@
-export const GRAVIDADE = 900;
-export const FORCA_PULO = 350;
+export const GRAVIDADE = 1000;
+export const FORCA_PULO = 400;
 export const VELOCIDADE_FUNDO = 130;
 
 export const ESPACO_ENTRE_CANOS = 160;
